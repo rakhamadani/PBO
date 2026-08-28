@@ -19,9 +19,12 @@ public class Bike {
 
     public int speedAcceleration(int increment) {
         speed += increment;
-        if (speed > GEAR_SPEED_LIMITS[gear - 1]) {
-            speed = GEAR_SPEED_LIMITS[gear - 1];
+        if (gear > 0 && gear <= GEAR_SPEED_LIMITS.length) {
+            if (speed > GEAR_SPEED_LIMITS[gear - 1]) {
+                speed = GEAR_SPEED_LIMITS[gear - 1];
+            }
         }
+        
         return speed;
     }
 
